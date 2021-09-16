@@ -12,8 +12,8 @@ class ShowInquiries extends Component {
   }
 
   componentDidMount () {
-    const { msgAlert } = this.props
-    showInquiries()
+    const { msgAlert, user } = this.props
+    showInquiries(user)
       .then((response) => this.setState({
         inquiries: response.data.inquiries
       }))
@@ -23,7 +23,7 @@ class ShowInquiries extends Component {
 
   render () {
     const inquiries = this.state.inquiries.map(inquiry => (
-      <li key={inquiry.id}>
+      <li key={inquiry._id}>
         <Link to={ `/inquiries/${inquiry._id}` }>{inquiry.subject}</Link>
       </li>
     ))

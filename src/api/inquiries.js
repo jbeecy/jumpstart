@@ -12,10 +12,13 @@ export const createInquiry = (data, user) => {
   })
 }
 
-export const showInquiries = () => {
+export const showInquiries = (user) => {
   return axios({
     url: apiUrl + '/inquiries',
-    method: 'get'
+    method: 'get',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
   })
 }
 

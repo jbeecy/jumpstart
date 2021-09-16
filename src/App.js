@@ -97,9 +97,9 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            path='/inquiries'
+            path='/create-inquiries'
             render={() => (
-              <CreateInquiries msgAlert={this.msg} user={user}/>
+              <CreateInquiries msgAlert={this.msgAlert} user={user}/>
             )}
           />
         </main>
