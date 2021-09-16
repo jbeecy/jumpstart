@@ -10,6 +10,8 @@ import SignUp from './components/auth/SignUp'
 import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
+import ShowInquiries from './components/inquiries/ShowInquiries'
+import CreateInquiries from './components/inquiries/CreateInquiries'
 
 class App extends Component {
   constructor (props) {
@@ -84,6 +86,20 @@ class App extends Component {
             path='/change-password'
             render={() => (
               <ChangePassword msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/inquiries'
+            render={() => (
+              <ShowInquiries msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            path='/inquiries'
+            render={() => (
+              <CreateInquiries msgAlert={this.msg} user={user}/>
             )}
           />
         </main>
