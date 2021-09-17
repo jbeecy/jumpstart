@@ -66,6 +66,7 @@ class ShowInquiries extends Component {
           <Card.Title>{inquiry.subject}</Card.Title>
           <Card.Text>{inquiry.content}</Card.Text>
           <Button
+            data-id={inquiry._id}
             style={{ margin: '10px', alignItems: 'center' }}
             onClick={() => history.push(`/inquiries/${inquiry._id}`)}
           >

@@ -42,3 +42,13 @@ export const deleteInquiry = (id, user) => {
     }
   })
 }
+
+export const getInquiryById = (id, user) => {
+  return axios({
+    url: apiUrl + '/inquiries/' + id,
+    method: 'get',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
