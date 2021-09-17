@@ -47,7 +47,7 @@ class ShowInquiries extends Component {
       .catch((err) =>
         msgAlert({
           heading: 'Delete failed.',
-          message: 'Unable to delete. If you are the owner you cannot delete this.' + err.message,
+          message: 'Unable to delete. If you are not the owner you cannot delete this.' + err.message,
           variant: 'danger'
         })
       )
