@@ -20,7 +20,6 @@ class UpdateInquiry extends Component {
     const { match, user, msgAlert } = this.props
     getInquiryById(match.params.id, user)
       .then((res) => {
-        console.log(res)
         this.setState({ inquiry: res.data.inquiry })
       })
       .then(() =>
