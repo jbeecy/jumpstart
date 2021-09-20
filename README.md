@@ -1,207 +1,58 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+![Jumpstart](https://user-images.githubusercontent.com/86622600/134027364-65a01010-188c-4de0-b11e-5afbbfe68297.PNG)
 
-# react-auth-template
+# Important Links
 
-A front-end framework template for starting projects with a recent version of
-either the [Django API Template](https://git.generalassemb.ly/ga-wdi-boston/django-template)
-or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
+[Deployed Front End](https://jbeecy.github.io/jumpstart/)
 
-## Installation
+[Back end Heroku Deployed](https://git.heroku.com/infinite-everglades-04366.git)
 
-1. [Download](../../archive/main.zip) this template.
-1. Unzip and rename the template directory (`unzip ~/Downloads/react-auth-template-main.zip`).
-1. Move into the new project and `git init`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace `react-auth-template` in `package.json` with your
-   projects name.
-1. Replace the `"homepage"` field in `package.json` with your (public) Github
-   account name and repository name.
-1. Install dependencies with `npm install`.
-1. `git add` and `git commit` your changes.
-1. Run the development server with `npm start`.
+## Repository Links
 
-## Deployment
+[Front End Repo](https://github.com/jbeecy/jumpstart)
 
-Before deploying, you first need to make sure the `homepage` key in your
-`package.json` is pointing to the correct value. It should be the url of your
-deployed application.
+[Back End Repo](https://github.com/jbeecy/jumpstart-api)
 
-To deploy you should first make sure you are on the `main` branch with a
-clean working directory, then you can run `npm run deploy` and wait to see if
-it runs successfully.
+## What is Jumpstart?
 
-## About
+JumpStart is an application where all developers, whether junior, mid-level, senior, etc, can come to post code, ask questions, share accomplishments, store important files, and talk to fellow developers. The premise of jumpstart is StackOverflow meats GitHub. 
 
-This template is derived from GA Boston's [react-template](https://git.generalassemb.ly/ga-wdi-boston/react-template).
-Most of the development dependencies, such as linters, SCSS compiler, Webpack
-config, NPM scripts, etc in this repo come from there.
+Users can sign up, or sign in if already signed up. Once logged it, users can change their password or sign out, as well as post "Inquiries". To create an inquiry, simply navigate to the 'Create Inquiry' section on the navbar. Once you have successfully created an inquiry, you will be redirected to the inquiries page where you can see all the inquiries that have been posted.
 
-It includes all the components and routes needed to sign up, sign in, change
-passwords, and sign out of an API built with either template linked above, with
-no need for modification.
+Once you have posted your inquiry, you are able to update it or delete it. The update and delete buttons require ownership of the inquiry to perform either. You will get an error message if you attempt to update or delete something that isn't yours.
 
-**NOTE**: You should customize the included components to suit you app! They're
-provided as a guide and a bare minimum of functionality and style. Consider
-changing the provided SCSS styles, modifying the auth code, improving the flash
-messages, etc.
+## Technologies used
 
-## Structure
+#### Front End:
+React, JavaScript, Bootstrap, HTML, CSS
 
-The top-level `App` component stores the currently authenticated
-user in state, as well as data related to the flash messages. `App` renders the
-`Header` component, and a list of routes, each of which render a component from
-`src/components`. The `src/api` directory has a component file, `auth.js`, which
-contains all the needed `axios` calls pertaining to authentication.
+#### Back End:
+MongoDB, Mongoose, Express API, Passpost, BCryptjs
 
-You can follow this pattern in your app as well. For instance, if you are making
-an app that keeps track of books, you might want a `src/api/books.js`, which
-contains its own `axios` call pertaining to your books resource CRUD actions.
-Using a separate directory within `components` for each individual component you
-add makes it easy to locate and update components and has the added benefit of
-making it easy to create custom styles that apply to that specific component.
-To apply component specific styles, add a file to the component's directory such
-as `ComponentName.scss` and then import it directly into the component with
-`import './ComponentName.scss'`.  This will keep your styles modularized and
-make it easier to make changes at the component level.
+## Unsolved Problems
 
-### Included Routes
+As of now, there are still several features I am working on bringing to Jumpstart:
+1. Version 2 will allow users to comment on all posts, and markdown will be supported in inquiries as well as comments.
+2. Version 3 will allow users to post documents such as PDF files, users can also comment on these.
+3. Version 4 will allow users to direct message one another if they so decide, and will allow users to modify their own profile if they so decide.
 
-This template comes with a handful of front-end routes that display
-different components for user actions.
+### Planning and Problem Solving
 
-| Endpoint         | Component | `AuthenticatedRoute`? |
-|------------------|-------------------|-------|
-| `/sign-up`       | `SignUp`    | No |
-| `/sign-in`       | `SignIn`    | No |
-| `/change-password` | `ChangePassword`  | Yes |
-| `/sign-out`        | `SignOut`   | Yes |
+After developing the idea for what my application would do, I generated user stories, wireframes, and an ERD to give myself a better vision for how to create the application.
 
-There is no HTTP verb listed because these are all front-end routes handled by
-React. Some of these routes should not be available unless a user is signed in,
-so they will use the `AuthenticatedRoute` component instead of the regular
-`Route`. This custom component is provided as part of the template, and is not
-a part of the React library (see more below).
+The first technical piece I worked on was the back end, I wanted to make sure that all my API calls were successfully tested with curl scripts before moving on to the front end. After the back end was completed, I began working on the front end.
 
-## Features
+My general approach for problem solving was "slow is smooth, smooth is fast" since I realized that most problems are simple fixes that were just missed the first time around.
 
-### `<AuthenticatedRoute />`
+### Set-up and Installation
 
-This template contains a handy component for creating routes that require a
-user to be authenticated before visiting. This component lives in
-`src/auth/components/AuthenticatedRoute.js` and is already required in `App`.
-It's a thin wrapper around React Router's `<Route />` component. The only
-difference is that it expects a prop called `user`, and if that prop is falsy,
-it will render a `<Redirect />` that takes the user to `/`. **To use
-it, you must pass it the user as a prop!**
+Setup and Installation is quite simple for jumpstart. Fork and clone both the front end and the back end repositories. Make sure you run `npm install` when you are in both directories. Once that is complete, change into a new branch that you create and you are all set! The npm packages for this application work on both Windows and Mac, so no further npm packages should be required for running the base version of the application. To run on local host (development environment) in your front end repository, run `npm run start` if on Mac, or `npm run start-windows` if on Windows. For the back end, `npm run server` or `npm run serve` works for both Windows and Mac.
 
-It supports both the `component=` and `render=` attributes, but like `<Route />`
-it will not forward props to the component if you use `component=`.
+### Wireframes and User Stories
 
-### `<AutoDismissAlert />` Component
+[Click here to view wireframes](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/files/3833/project.4.wireframe.drawio.pdf)
 
-This template also already contains a component that displays user messages.
-Messages are configurable via redux actions.  This component can be found in
-`src/components/AutoDismissAlert/AutoDismissAlert.js`. **There is no need to add
-this component to your app. It is already required in `App`.**  A single
-component instance is used to manage all alerts application-wide.
-
-The alert can be used by passing the `alertMsg` method to a rendered route.  The
-`alertMsg` method expects an object with a `heading`, `message`, and a `variant` property.
-
-Use this component in conjunction with the `messages.js` file in the same
-directory to create and manage all of your application messages in one place.
-
-The `variant` property must be a Bootstrap alert variant, as this component is merely a
-wrapper around the [react-bootstrap Alert
-component](https://react-bootstrap.github.io/components/alerts/).  The types it
-will accept are: 'primary', 'secondary', 'success', 'danger', 'warning', 'info',
-'light', and 'dark'.
-
- To change the duration of the message, replace `5000` with a value of your
- choice (in milliseconds) in this component's `componentDidMount` method.
-
-### `src/apiConfig.js`
-
-Just like in
-[browser-template](https://git.generalassemb.ly/ga-wdi-boston/browser-template),
-this file will determine whether you're in a production or development
-environment and choose an API URL accordingly. Don't forget to replace the
-`production` URL with your deployed API's URL.
-
-### Bootstrap
-
-This template includes two different implementations of the classic Bootstrap
-library we know and love.
-
-#### `bootstrap`
-
-The first implementation of Bootstrap comes from the `bootstrap` npm package,
-and provides all of the normal Bootstrap classes and styling we were able to
-use with the `browser-template`. This package is included in the
-`src/index.scss` file at the very top of the file. That means JSX in this
-template can utilize Bootstrap classes like `btn`, `container`, `row`, etc.
-
-See an example below:
-
-```jsx
-import React from 'react'
-
-const AboutPage = () => (
-  <div className="card">
-    <div className="card-body">
-      <h1 className="card-title">About Page</h1>
-      <p className="card-text">There is a Bootstrap card on this page!</p>
-    </div>
-  </div>
-)
-
-export default AboutPage
-```
-
-> Note: Remember to use `className` not `class` in your JSX!
-
-#### `react-bootstrap`
-
-In addition to the classic Bootstrap classes we can plug into our JSX, this
-template also comes with a special package called [`react-bootstrap`](https://react-bootstrap.github.io/).
-This package allows us to use special React components that have been pre-built
-according to the Bootstrap library.
-
-Import components from the `react-bootstrap` library, then use them just like
-regular components in your JSX!
-
-See an example below:
-
-```jsx
-import React from 'react'
-import Card from 'react-bootstrap/Card'
-
-const AboutPage = () => (
-  <Card>
-    <Card.Body>
-      <Card.Title>The About Page</Card.Title>
-      <Card.Text>There is a Bootstrap card on this page!</Card.Text>
-    </Card.Body>
-  </Card>
-)
-
-export default AboutPage
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `npm run nag`: runs code quality analysis tools on your code and complains.
-- `npm run make-standard`: reformats all your code in the JavaScript Standard
-  Style.
-- `npm run start`: generates bundles, watches, and livereloads.
-- `npm run build`: place bundled styles and scripts where `index.html` can find
-    them
-- `npm run deploy`: builds and deploys main branch
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+As an unregistered user I want to be able to sign up and sign in
+As a registered user I want to be able to sign out and change password
+As a registered user I want to be able to post something
+As a registered user I want to be able to update or delete my owned posts
+As a registered user I want to be able to see other peoples posts
