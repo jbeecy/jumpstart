@@ -51,8 +51,8 @@ Setup and Installation is quite simple for jumpstart. Fork and clone both the fr
 
 [Click here to view wireframes](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/files/3833/project.4.wireframe.drawio.pdf)
 
-As an unregistered user I want to be able to sign up and sign in
-As a registered user I want to be able to sign out and change password
-As a registered user I want to be able to post something
-As a registered user I want to be able to update or delete my owned posts
-As a registered user I want to be able to see other peoples posts
+1. As an unregistered user I want to be able to sign up and sign in
+2. As a registered user I want to be able to sign out and change password
+3. As a registered user I want to be able to post something
+4. As a registered user I want to be able to update or delete my owned posts
+5. As a registered user I want to be able to see other peoples posts
