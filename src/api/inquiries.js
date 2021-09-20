@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export const createInquiry = (data, user) => {
   return axios({
-    url: apiUrl + '/inquiries',
+    url: apiUrl + '/inquiries/',
     method: 'post',
     data: { inquiry: data },
     headers: {
@@ -14,7 +14,7 @@ export const createInquiry = (data, user) => {
 
 export const showInquiries = (user) => {
   return axios({
-    url: apiUrl + '/inquiries',
+    url: apiUrl + '/inquiries/',
     method: 'get',
     headers: {
       Authorization: `Bearer ${user.token}`
