@@ -19,6 +19,7 @@ class ShowInquiries extends Component {
         inquiries: response.data.inquiries
       }))
       .then(() => msgAlert({ heading: 'Success', message: 'Here\'s the inquiries', variant: 'success' }))
+      .then(console.log(user.email))
       .catch(err => msgAlert({ heading: 'Index failed :(', message: 'Something went wrong: ' + err.message, variant: 'danger' }))
   }
 
@@ -63,7 +64,8 @@ class ShowInquiries extends Component {
     const inquiries = this.state.inquiries.map(inquiry => (
       <Card key={inquiry._id} style={{ width: '45rem' }}>
         <Card.Body>
-          <Card.Title>{inquiry.subject}</Card.Title>
+          <Card.Title>{this.props.user.email}</Card.Title>
+          <Card.Text>{inquiry.subject}</Card.Text>
           <Card.Text>{inquiry.content}</Card.Text>
           <Button
             data-id={inquiry._id}
