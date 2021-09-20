@@ -59,7 +59,7 @@ class ShowInquiries extends Component {
       justifyContent: 'center',
       flexFlow: 'row wrap'
     }
-    const { history } = this.props
+    const { history, user, msgAlert } = this.props
     const inquiries = this.state.inquiries.map(inquiry => (
       <Card key={inquiry._id} style={{ width: '45rem' }}>
         <Card.Body>
@@ -68,7 +68,17 @@ class ShowInquiries extends Component {
           <Button
             data-id={inquiry._id}
             style={{ margin: '10px', alignItems: 'center' }}
-            onClick={() => history.push(`/inquiries/${inquiry._id}`)}
+            onClick={() => {
+              if (user._id === inquiry.owner) {
+                history.push(`/inquiries/${inquiry._id}`)
+              } else {
+                msgAlert({
+                  heading: 'You Dont Own This',
+                  message: 'You cant edit this because you dont own it',
+                  variant: 'danger'
+                })
+              }
+            }}
           >
             Update Inquiry
           </Button>
