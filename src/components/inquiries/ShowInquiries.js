@@ -64,8 +64,7 @@ class ShowInquiries extends Component {
     const inquiries = this.state.inquiries.map(inquiry => (
       <Card key={inquiry._id} style={{ width: '45rem' }}>
         <Card.Body>
-          <Card.Title>{this.props.user.email}</Card.Title>
-          <Card.Text>{inquiry.subject}</Card.Text>
+          <Card.Title>{inquiry.subject}</Card.Title>
           <Card.Text>{inquiry.content}</Card.Text>
           <Button
             data-id={inquiry._id}
