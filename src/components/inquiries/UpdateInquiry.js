@@ -46,7 +46,6 @@ class UpdateInquiry extends Component {
     event.preventDefault()
     const { user, msgAlert, history, match } = this.props
     updateInquiry(this.state.inquiry, match.params.id, user)
-      // .then(() => history.push('/inquiries/:id'))
       .then(() =>
         msgAlert({
           heading: 'Inquiry updated!',

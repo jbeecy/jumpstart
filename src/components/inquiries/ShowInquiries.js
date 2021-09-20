@@ -19,7 +19,6 @@ class ShowInquiries extends Component {
         inquiries: response.data.inquiries
       }))
       .then(() => msgAlert({ heading: 'Success', message: 'Here\'s the inquiries', variant: 'success' }))
-      .then(console.log(user.email))
       .catch(err => msgAlert({ heading: 'Index failed :(', message: 'Something went wrong: ' + err.message, variant: 'danger' }))
   }
 
