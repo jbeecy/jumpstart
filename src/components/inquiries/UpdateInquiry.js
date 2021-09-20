@@ -2,7 +2,7 @@
 /* eslint-disable no-tabs */
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { updateInquiry, getInquiryById } from '../../api/inquiries'
+import { updateInquiry, getInquiryById, showInquiries } from '../../api/inquiries'
 import UpdateForm from './UpdateForm'
 
 class UpdateInquiry extends Component {
@@ -46,7 +46,7 @@ class UpdateInquiry extends Component {
     event.preventDefault()
     const { user, msgAlert, history, match } = this.props
     updateInquiry(this.state.inquiry, match.params.id, user)
-      .then((res) => history.push('/inquiries'))
+      // .then(() => history.push('/inquiries/:id'))
       .then(() =>
         msgAlert({
           heading: 'Inquiry updated!',
@@ -54,6 +54,16 @@ class UpdateInquiry extends Component {
           variant: 'success'
         })
       )
+      .then(() => history.push('/inquiries'))
+      .then(() => showInquiries(user)
+        .then((response) => this.setState({
+          inquiries: response.data.inquiries
+        }))
+        .then(() => msgAlert({
+          heading: 'Success!',
+          message: 'Here are the inquiries again.',
+          variant: 'success'
+        })))
       .catch((err) =>
         msgAlert({
           heading: 'Update failed.',

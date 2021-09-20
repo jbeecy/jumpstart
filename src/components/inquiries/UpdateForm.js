@@ -18,7 +18,7 @@ const UpdateForm = ({ inquiry, handleSubmit, handleChange }) => (
     <Form.Group controlId='content'
       as="textarea"
       required
-      name='review'
+      name='content'
       value={inquiry.content}
       placeholder='Update Inquiry Content'
       onChange={handleChange}>
