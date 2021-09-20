@@ -33,7 +33,12 @@ class CreateInquiry extends Component {
         }))
       .then(() => history.push('/inquiries'))
       // .then(showInquiries)
-      .catch(err => console.error(err))
+      .catch((err) =>
+        msgAlert({
+          heading: 'Create failed',
+          message: 'Inquiry failed to be created.' + err.message,
+          variant: 'danger'
+        }))
   }
 
   render () {
@@ -43,7 +48,7 @@ class CreateInquiry extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Subject</label>
           <input value={this.state.subject} onChange={this.handleChange} name="subject"/>
-          <label>content</label>
+          <label>Content</label>
           <input value={this.state.content} onChange={this.handleChange} name="content"/>
           <button type="submit">Create inquiry</button>
         </form>
