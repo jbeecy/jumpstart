@@ -26,7 +26,7 @@ Once you have posted your inquiry, you are able to update it or delete it. The u
 React, JavaScript, Bootstrap, HTML, CSS
 
 #### Back End:
-MongoDB, Mongoose, Express API, Passpost, BCryptjs
+MongoDB, Mongoose, Express API, Passport, BCryptjs
 
 ## Unsolved Problems
 
