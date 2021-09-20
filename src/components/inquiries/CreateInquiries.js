@@ -39,6 +39,9 @@ class CreateInquiry extends Component {
           message: 'Inquiry failed to be created.' + err.message,
           variant: 'danger'
         }))
+      .finally(() => this.setState({
+        subject: '', content: ''
+      }))
   }
 
   render () {
