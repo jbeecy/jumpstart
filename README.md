@@ -47,9 +47,7 @@ My general approach for problem solving was "slow is smooth, smooth is fast" sin
 
 Setup and Installation is quite simple for jumpstart. Fork and clone both the front end and the back end repositories. Make sure you run `npm install` when you are in both directories. Once that is complete, change into a new branch that you create and you are all set! The npm packages for this application work on both Windows and Mac, so no further npm packages should be required for running the base version of the application. To run on local host (development environment) in your front end repository, run `npm run start` if on Mac, or `npm run start-windows` if on Windows. For the back end, `npm run server` or `npm run serve` works for both Windows and Mac.
 
-### Wireframes and User Stories
-
-[Click here to view wireframes](https://git.generalassemb.ly/ga-wdi-boston/capstone-project/files/3833/project.4.wireframe.drawio.pdf)
+### User Stories
 
 1. As an unregistered user I want to be able to sign up and sign in
 2. As a registered user I want to be able to sign out and change password
